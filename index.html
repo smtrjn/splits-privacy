@@ -3,65 +3,405 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SplitVault - Privacy Policy</title>
+    <title>SplitVault - Race Timer & Training Journal for iOS</title>
+    <meta name="description" content="SplitVault is a free iOS app for timing races, tracking splits, and managing performance across multiple athletes. Built for swim parents, coaches, and athletes.">
+    <meta name="keywords" content="race timer, split timer, swim timer, lap timer, training journal, swimming app, stopwatch, personal best, athlete tracking, iOS app">
+    <meta name="author" content="Sumit Rajan">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="SplitVault - Race Timer & Training Journal">
+    <meta property="og:description" content="Track splits, set goals, manage multiple athletes. Free for iOS.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smtrjn.github.io/splits-privacy/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="SplitVault - Race Timer & Training Journal">
+    <meta name="twitter:description" content="Track splits, set goals, manage multiple athletes. Free for iOS.">
+
+    <link rel="canonical" href="https://smtrjn.github.io/splits-privacy/">
+
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-            line-height: 1.6;
-            color: #333;
+            color: #1d1d1f;
+            background: #ffffff;
+            -webkit-font-smoothing: antialiased;
         }
-        h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
-        h2 { font-size: 1.2rem; margin-top: 2rem; }
-        .subtitle { color: #666; margin-bottom: 2rem; }
-        a { color: #007AFF; }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .nav-brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: #1d1d1f;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover { color: #007AFF; }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 5rem 1.5rem 4rem;
+            background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #007AFF;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.3rem 0.9rem;
+            border-radius: 999px;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span { color: #007AFF; }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #6e6e73;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.5;
+        }
+
+        .app-store-badge img {
+            height: 54px;
+            transition: opacity 0.2s;
+        }
+
+        .app-store-badge img:hover { opacity: 0.8; }
+
+        .hero-subtitle {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #86868b;
+        }
+
+        /* Features */
+        .features {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        .features .section-subtitle {
+            text-align: center;
+            color: #6e6e73;
+            font-size: 1.1rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: #f5f5f7;
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover { transform: translateY(-2px); }
+
+        .feature-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #6e6e73;
+            line-height: 1.5;
+        }
+
+        /* Use Cases */
+        .use-cases {
+            background: #f5f5f7;
+            padding: 5rem 1.5rem;
+        }
+
+        .use-cases-inner {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .use-cases h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+        }
+
+        .persona-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .persona-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .persona-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .persona-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .persona-card p {
+            font-size: 0.95rem;
+            color: #6e6e73;
+            line-height: 1.5;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 5rem 1.5rem;
+        }
+
+        .cta h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            color: #6e6e73;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #e5e5e5;
+            padding: 2rem 1.5rem;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            color: #6e6e73;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover { color: #007AFF; }
+
+        .footer-copy {
+            color: #86868b;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.05rem; }
+            .feature-grid, .persona-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .features h2, .use-cases h2, .cta h2 { font-size: 1.8rem; }
+            .nav-links a { margin-left: 1rem; font-size: 0.85rem; }
+        }
     </style>
 </head>
 <body>
-    <h1>SplitVault - Race Timer & Log</h1>
-    <p class="subtitle">Privacy Policy &middot; Effective March 24, 2026</p>
 
-    <h2>Overview</h2>
-    <p>SplitVault is a race timer and training journal for tracking athletic performance. Your privacy is important to us. This policy explains what data the app collects, how it is used, and how it is stored.</p>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="nav-brand">SplitVault</a>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy</a>
+        </div>
+    </nav>
 
-    <h2>Data We Collect</h2>
-    <p><strong>Timing Data:</strong> The app records timing sessions, laps, and split times that you create. This data is stored locally on your device and synced to your private iCloud account.</p>
-    <p><strong>Athlete Profiles:</strong> You may create athlete profiles with a name, colour, and optional photo. Photos are stored locally on your device and synced via iCloud. No profile data is shared externally.</p>
-    <p><strong>Location Data:</strong> When you start a timing session, the app may capture your current location (latitude and longitude) to associate with that session. Location is only accessed at the moment of recording and is not tracked continuously. You can deny location access and the app will function normally without it.</p>
-    <p><strong>Weather Data:</strong> When location access is granted, the app fetches current weather conditions (temperature, humidity, wind) from Apple Weather at the time of each session. This data is stored with the timing record. Weather data is provided by Apple Weather.</p>
-    <p><strong>Event Categories:</strong> You may create custom category names to organise your timing sessions. These are stored locally and synced via iCloud.</p>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-badge">Free on the App Store</div>
+        <h1>Every split.<br>Every <span>personal best</span>.</h1>
+        <p>A race timer and training journal built for athletes, coaches, and swim parents. Track splits, set goals, and manage multiple athletes — all in one app.</p>
+        <a class="app-store-badge" href="https://apps.apple.com/us/app/splitvault-race-timer-log/id6760390870">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download SplitVault on the App Store">
+        </a>
+        <p class="hero-subtitle">Requires iOS 18 or later. Available on iPhone, iPad, and Mac.</p>
+    </section>
 
-    <h2>iCloud Sync</h2>
-    <p>Your data is synced across your devices using Apple's CloudKit service. Data is stored in your private iCloud database, which only you can access. We do not have access to your iCloud data.</p>
+    <!-- Features -->
+    <section class="features" id="features">
+        <h2>Everything you need poolside</h2>
+        <p class="section-subtitle">More than a stopwatch. A complete training companion.</p>
 
-    <h2>Data We Do Not Collect</h2>
-    <ul>
-        <li>We do not collect personal information such as your name, email, or phone number.</li>
-        <li>We do not use any third-party analytics, advertising, or tracking services.</li>
-        <li>We do not sell, share, or transfer your data to any third parties.</li>
-        <li>We do not track your activity across other apps or websites.</li>
-    </ul>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">&#9201;</div>
+                <h3>Precision Timer with Lap Splits</h3>
+                <p>Tap for each length. See individual and cumulative splits in real time. Personal bests flagged automatically.</p>
+            </div>
 
-    <h2>Data Storage & Security</h2>
-    <p>All data is stored locally on your device and in your private iCloud account, protected by Apple's built-in security measures. We do not operate any external servers.</p>
+            <div class="feature-card">
+                <div class="feature-icon">&#127947;</div>
+                <h3>Multiple Athlete Profiles</h3>
+                <p>Track each athlete independently with their own categories, timings, goals, and photos. Perfect for families and coaches.</p>
+            </div>
 
-    <h2>Your Choices</h2>
-    <ul>
-        <li>You can deny location access in iOS Settings without affecting core app functionality.</li>
-        <li>You can disable iCloud sync by turning off iCloud for the app in iOS Settings.</li>
-        <li>You can delete any timing session, category, or athlete profile within the app at any time.</li>
-        <li>Deleting the app removes all locally stored data.</li>
-    </ul>
+            <div class="feature-card">
+                <div class="feature-icon">&#127919;</div>
+                <h3>Goal Times & Progress</h3>
+                <p>Set target times per event. See at a glance how close you are with colour-coded deltas and chart reference lines.</p>
+            </div>
 
-    <h2>Children's Privacy</h2>
-    <p>The app does not knowingly collect data from children under 13. The app contains no user accounts, social features, or third-party services.</p>
+            <div class="feature-card">
+                <div class="feature-icon">&#128200;</div>
+                <h3>Performance Charts</h3>
+                <p>Visualise trends over weeks and months with interactive charts and moving averages. Know when you're improving.</p>
+            </div>
 
-    <h2>Changes to This Policy</h2>
-    <p>We may update this privacy policy from time to time. Any changes will be posted on this page with an updated effective date.</p>
+            <div class="feature-card">
+                <div class="feature-icon">&#127946;</div>
+                <h3>Short Course & Long Course</h3>
+                <p>Categorise swim events by course type. PBs and goals are tracked independently for 25m and 50m pools.</p>
+            </div>
 
-    <h2>Contact</h2>
-    <p>If you have questions about this privacy policy, please contact us at <a href="https://github.com/smtrjn">github.com/smtrjn</a>.</p>
+            <div class="feature-card">
+                <div class="feature-icon">&#127780;</div>
+                <h3>Weather & Location</h3>
+                <p>Automatically capture conditions for every session. See how weather affects performance over time.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">&#9997;&#65039;</div>
+                <h3>Manual Time Entry</h3>
+                <p>Add competition results or backfill historical data. Enter any time with a date, category, and description.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">&#9729;&#65039;</div>
+                <h3>iCloud Sync</h3>
+                <p>Your data syncs seamlessly across iPhone, iPad, and Mac. Always have your full history at hand.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">&#128196;</div>
+                <h3>CSV Export</h3>
+                <p>Export your timing data for analysis in spreadsheets. Share reports with coaches, parents, or athletes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="use-cases">
+        <div class="use-cases-inner">
+            <h2>Built for people who live at the pool</h2>
+
+            <div class="persona-grid">
+                <div class="persona-card">
+                    <div class="persona-emoji">&#128104;&#8205;&#128105;&#8205;&#128103;</div>
+                    <h3>Swim Parents</h3>
+                    <p>Track your children's times across training sessions and competitions. Multiple athlete profiles mean one app for the whole family.</p>
+                </div>
+
+                <div class="persona-card">
+                    <div class="persona-emoji">&#128203;</div>
+                    <h3>Coaches</h3>
+                    <p>Manage your squad's progress with per-athlete categories, goal times, and trend charts. Export data for team reviews.</p>
+                </div>
+
+                <div class="persona-card">
+                    <div class="persona-emoji">&#127946;</div>
+                    <h3>Athletes</h3>
+                    <p>Own your performance data. Set personal goals, review splits, and see your improvement over time with clear visual trends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <h2>Start tracking today</h2>
+        <p>Free. No ads. No subscriptions. Just a better way to track your times.</p>
+        <a class="app-store-badge" href="https://apps.apple.com/us/app/splitvault-race-timer-log/id6760390870">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download SplitVault on the App Store">
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-copy">&copy; 2026 SplitVault. All rights reserved.</span>
+            <div class="footer-links">
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="https://github.com/smtrjn">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
